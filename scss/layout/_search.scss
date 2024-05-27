@@ -1,0 +1,11 @@
+.search {
+  padding: 15px 0;
+  background-color: $secondary-bg-color;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 17px;
+  }
+}

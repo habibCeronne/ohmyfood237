@@ -1,0 +1,48 @@
+.l-footer {
+  color: #ffffff;
+  background-color: #353535;
+
+  .container {
+    padding: 22px 25px;
+
+    @include respond-to("desktop") {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-end;
+      gap: 30px;
+
+      padding: 30px 25px;
+    }
+  }
+
+  .brand {
+    text-align: left;
+  }
+}
+
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  @include respond-to("desktop") {
+    flex-direction: row;
+    gap: 30px;
+    padding-top: 30px;
+  }
+
+  list-style: none;
+
+  .fa-solid {
+    width: 3rem;
+  }
+}
+
+.footer-title {
+  font-size: 1.8rem;
+  padding-bottom: 16px;
+
+  @include respond-to("desktop") {
+    padding-bottom: 0;
+  }
+}

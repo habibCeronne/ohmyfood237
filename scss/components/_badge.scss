@@ -1,0 +1,30 @@
+.badge-new,
+.badge-n {
+  position: absolute;
+  user-select: none;
+}
+
+.badge-new {
+  padding: 0.5em 0.7em;
+
+  font-weight: 500;
+  font-size: 0.875em;
+  color: #008766;
+  border-radius: 0.2em;
+  background-color: $tertiary-color;
+}
+
+.badge-n {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.75em;
+
+  width: 2em;
+  height: 2em;
+
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: $primary-color;
+}

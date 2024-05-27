@@ -1,0 +1,164 @@
+@use "sass:math";
+
+.restaurant {
+  .restaurant-img {
+    position: relative;
+    z-index: 1;
+
+    aspect-ratio: 375/275;
+
+    max-height: 375px;
+    width: 100%;
+
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .menu-card {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+
+    max-width: 1055px;
+    margin: -40px auto 0;
+    padding: 32px 13px 40px 13px;
+
+    background-color: $primary-bg-color;
+    border-radius: 40px 40px 0 0;
+
+    overflow: hidden;
+  }
+
+  .restaurant-name {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+
+    @include respond-to("tablet") {
+      justify-content: center;
+    }
+  }
+
+  .restaurant-section {
+    width: 100%;
+    max-width: 634px;
+
+    &-title {
+      position: relative;
+
+      text-transform: uppercase;
+      padding-bottom: 8px;
+
+      &::after {
+        position: absolute;
+
+        content: "";
+
+        width: 5rem;
+        height: 3px;
+        left: 0;
+        bottom: 0;
+
+        background-color: $tertiary-color;
+      }
+    }
+  }
+
+  .appear-animate {
+    opacity: 0;
+
+    animation-name: appear-animation;
+    animation-duration: $appear-duration;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+  }
+
+  @for $i from 0 through 2 {
+    .delay-#{$i} {
+      animation-delay: $i * $appear-delay;
+    }
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .card {
+    display: flex;
+
+    max-width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+
+    padding: 0;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+
+    &:hover .menu-check {
+      margin-right: 0;
+    }
+  }
+
+  .card-content {
+    flex: 1;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    padding: 15px;
+  }
+
+  .menu-title,
+  .menu-description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .menu-price {
+    flex: 0;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    padding: 15px;
+
+    font-weight: 700;
+  }
+
+  .menu-check {
+    $width: 2.5 * $icon-size;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: $width;
+
+    margin-right: -$width;
+
+    transition: margin-right $check-duration ease-in-out;
+
+    color: #ffffff;
+    font-size: $icon-size;
+
+    background-color: $tertiary-color;
+  }
+
+  .restaurant-order {
+    text-align: center;
+  }
+}

@@ -1,0 +1,52 @@
+.restaurants {
+  background-color: $primary-bg-color;
+
+  .container {
+    padding: 50px 20px 66px 20px;
+    max-width: 1080px;
+  }
+
+  .cards {
+    justify-content: space-between;
+    gap: 18px;
+
+    @include respond-to("desktop") {
+      gap: 50px;
+    }
+  }
+
+  .card {
+    overflow: hidden;
+    flex: 1 1 100%;
+
+    //max-width: 490px;
+    @include respond-to("desktop") {
+      flex-basis: 40%;
+      //max-width: 490px;
+    }
+
+    background-color: #ffffff;
+    border-radius: 15px;
+  }
+
+  .card-img {
+    aspect-ratio: 3/2;
+    margin: -17% 0 0 0;
+
+    @include respond-to("desktop") {
+      aspect-ratio: 4/2;
+    }
+  }
+
+  .card-body {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 16px;
+  }
+
+  .badge-new {
+    right: 15px;
+    top: 15px;
+  }
+}
